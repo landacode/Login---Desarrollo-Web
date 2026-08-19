@@ -1,0 +1,18 @@
+.theme-toggle {
+  background: var(--surface-raised);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-color: var(--accent);
+}

@@ -1,0 +1,223 @@
+.dashboard {
+  min-height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Barra superior ── */
+.dashboard__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.dashboard__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dashboard__brand-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.dashboard__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.btn-logout:hover {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+/* ── Contenido principal ── */
+.dashboard__main {
+  flex: 1;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Sección de bienvenida ── */
+.dashboard__welcome {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.dashboard__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dashboard__greeting {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.dashboard__email {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0.2rem 0 0;
+}
+
+/* ── Tarjetas de estadísticas ── */
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  transition: box-shadow 0.2s;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.stat-card__icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.stat-card__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 600;
+}
+
+.stat-card__value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.2rem 0 0;
+}
+
+/* ── Panel de perfil ── */
+.dashboard__panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem;
+}
+
+.dashboard__panel-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 1.25rem;
+}
+
+.dashboard__profile-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.profile-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.profile-row:last-child {
+  border-bottom: none;
+}
+
+.profile-row__label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.profile-row__value {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: right;
+  max-width: 60%;
+  word-break: break-word;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .dashboard__header {
+    padding: 0.85rem 1rem;
+  }
+
+  .dashboard__main {
+    padding: 1.5rem 1rem;
+  }
+
+  .dashboard__greeting {
+    font-size: 1.4rem;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .profile-row__value {
+    max-width: 100%;
+    text-align: left;
+  }
+}
